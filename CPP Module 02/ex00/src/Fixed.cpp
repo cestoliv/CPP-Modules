@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 09:44:52 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/16 10:39:33 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:53:51 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Fixed	&Fixed::operator=(Fixed const &src)
 {
 	std::cout << "Copy assignement operator called." << std::endl;
 	if (this != &src)
-		this->_fp = this->getRawBits();
+		this->_fp = src.getRawBits();
 	return *this;
 }
 
