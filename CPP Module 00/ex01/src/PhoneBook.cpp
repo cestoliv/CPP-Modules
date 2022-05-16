@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:38:19 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/07 11:04:28 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/16 14:25:27 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,22 @@ int	PhoneBook::get_size()
 
 void	PhoneBook::add_contact()
 {
-	std::string first_name;
-	std::string last_name;
+	std::string first_name = "";
+	std::string last_name = "";
 	std::string nickname;
 	std::string phone_number;
 	std::string darkest_secret;
 
-	std::cout << "\tFirst Name\t[]: ";
-	std::getline(std::cin, first_name);
-	std::cout << "\tLast Name\t[]: ";
-	std::getline(std::cin, last_name);
+	while (first_name == "")
+	{
+		std::cout << "\tFirst Name\t[]: ";
+		std::getline(std::cin, first_name);
+	}
+	while (last_name == "")
+	{
+		std::cout << "\tLast Name\t[]: ";
+		std::getline(std::cin, last_name);
+	}
 	std::cout << "\tNickname\t[]: ";
 	std::getline(std::cin, nickname);
 	std::cout << "\tPhone\t\t[]: ";

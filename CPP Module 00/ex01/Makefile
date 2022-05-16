@@ -7,7 +7,7 @@ SRC		=	$S/Contact.cpp \
 			$S/main.cpp
 INCS	=	$I/Contact.hpp \
 			$I/PhoneBook.hpp \
-			$I/phonebook.hpp
+			$I/phonebook-app.hpp
 OBJ		=	$(SRC:$S/%.cpp=$O/%.o)
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$I
