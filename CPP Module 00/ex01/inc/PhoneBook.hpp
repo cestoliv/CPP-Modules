@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "phonebook-app.hpp"
 
 class PhoneBook {
 	Contact	*contacts;
