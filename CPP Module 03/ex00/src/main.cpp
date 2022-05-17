@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:53:16 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/17 15:10:17 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:30:37 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	ClapTrap	bob = ClapTrap("Bob");
 
-	//ClapTrap	bib = bob;
-	//ClapTrap	bubs[3];
+	ClapTrap	bib = bob;
+	ClapTrap	bubs[3];
 
 	bob.attack("a worm");
 	bob.attack("a worm");
