@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:35:08 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/07 10:50:24 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/17 09:45:19 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 Contact::Contact()
 {
-	//std::cout << "-> New contact" << std::endl;
 	return;
 }
 
 Contact::~Contact(void)
 {
-	//std::cout << "-> Contact destroyed" << std::endl;
 	return;
 }
 
