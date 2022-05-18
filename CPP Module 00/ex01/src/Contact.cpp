@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:35:08 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/17 09:45:19 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:42:25 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::string	Contact::get_last_name(long unsigned int size)
 		std::string lastname;
 		lastname = this->last_name.substr(0, size - 1);
 		lastname.push_back('.');
-		return last_name;
+		return lastname;
 	}
 	return this->last_name;
 }
