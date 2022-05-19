@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:37:43 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/07 11:02:24 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:29:47 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook-app.hpp"
 
 class PhoneBook {
-	Contact	*contacts;
-	int		size;
-	int		next_add_index;
+private:
+	Contact	*_contacts;
+	int		_size;
 
 public:
 	PhoneBook(void);
