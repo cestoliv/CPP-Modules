@@ -2,8 +2,6 @@
 
 int	main(int argc, char *argv[])
 {
-	(void) argc;
-
 	if (argc < 2)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
