@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:42:10 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/09 14:12:20 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:40:53 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@ Zombie::Zombie(void)
 {
 }
 
-Zombie::Zombie(std::string name): name(name)
+Zombie::Zombie(std::string name): _name(name)
 {
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " destroyed" << std::endl;
+	std::cout << this->_name << " destroyed" << std::endl;
 	return;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return;
 }
 
 void	Zombie::set_name(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 	return;
 }
