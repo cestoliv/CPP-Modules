@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:50:20 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:44:43 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:51:59 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 class HumanB {
 private:
-	std::string	name;
-	Weapon*		weapon;
+	std::string	_name;
+	Weapon*		_weapon;
 
 public:
 	HumanB(std::string name);

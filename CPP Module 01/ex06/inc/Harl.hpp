@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:08:12 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:47:16 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 10:16:59 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 class Harl {
 private:
-	int		filter_level;
-	bool	insignificant_printed;
+	int		_filter_level;
+	bool	_insignificant_printed;
 
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
+	void	_debug(void);
+	void	_info(void);
+	void	_warning(void);
+	void	_error(void);
 
 public:
 	Harl(void);

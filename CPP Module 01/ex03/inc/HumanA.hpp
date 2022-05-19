@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:44:55 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:44:49 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:51:51 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class HumanA {
 private:
-	std::string	name;
-	Weapon&		weapon;
+	std::string	_name;
+	Weapon&		_weapon;
 
 public:
 	HumanA(std::string name, Weapon& weapon);

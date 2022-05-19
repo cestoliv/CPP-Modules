@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:08:12 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:46:35 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 10:15:47 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 class Harl {
 private:
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
+	void	_debug(void);
+	void	_info(void);
+	void	_warning(void);
+	void	_error(void);
 
 public:
 	void	complain(std::string level);

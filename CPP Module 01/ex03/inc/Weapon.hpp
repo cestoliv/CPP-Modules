@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:37:35 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:45:26 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:52:06 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Weapon {
 private:
-	std::string	type;
+	std::string	_type;
 
 public:
 	Weapon(std::string type);
