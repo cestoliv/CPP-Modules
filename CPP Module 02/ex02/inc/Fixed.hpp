@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 08:55:33 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/16 16:16:38 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2022/05/19 11:16:31 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,22 @@ public:
 	Fixed	operator *(Fixed const &src) const;
 	Fixed	operator /(Fixed const &src) const;
 
-	// increment
+	// increment / decrement
+	Fixed	&operator ++(); // prefix
+	Fixed	operator ++(int); // postfix
+	Fixed	&operator --(); // prefix
+	Fixed	operator --(int); // postfix
+	
 	
 	int		getRawBits(void) const;
 	void	setRawBits(const int raw);
 	float	toFloat(void) const;
 	int		toInt(void) const;
+
+	static Fixed		&min(Fixed &a, Fixed &b);
+	static const Fixed	&min(const Fixed &a, const Fixed &b);
+	static Fixed		&max(Fixed &a, Fixed &b);
+	static const Fixed	&max(const Fixed &a, const Fixed &b);
 };
 
 std::ostream	&operator<<(std::ostream &o, Fixed const &i);
