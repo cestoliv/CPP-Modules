@@ -6,11 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:40:14 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:36:42 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:45:45 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef ZOMBIE_CLASS_H
+# define ZOMBIE_CLASS_H
+
+# include <string>
 
 class Zombie {
 private:
@@ -22,3 +25,5 @@ public:
 
 	void	announce(void);
 };
+
+#endif

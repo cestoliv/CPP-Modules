@@ -6,13 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:37:35 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/09 14:59:42 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:45:26 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef WEAPON_CLASS_H
+# define WEAPON_CLASS_H
 
-#include <string>
+# include <string>
 
 class Weapon {
 private:
@@ -25,3 +26,5 @@ public:
 	std::string	getType();
 	void		setType(std::string type);
 };
+
+#endif

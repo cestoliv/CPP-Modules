@@ -6,9 +6,12 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 08:55:33 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/16 10:17:34 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:49:24 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_CLASS_H
+# define FIXED_CLASS_H
 
 class Fixed {
 private:
@@ -24,3 +27,5 @@ public:
 	int		getRawBits(void) const;
 	void	setRawBits(const int raw);
 };
+
+#endif

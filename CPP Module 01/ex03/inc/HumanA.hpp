@@ -6,14 +6,15 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:44:55 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/09 15:03:33 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:44:49 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef HUMANA_CLASS_H
+# define HUMANA_CLASS_H
 
-#include <string>
-#include "Weapon.hpp"
+# include <string>
+# include "Weapon.hpp"
 
 class HumanA {
 private:
@@ -26,3 +27,5 @@ public:
 
 	void	attack(void);
 };
+
+#endif

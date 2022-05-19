@@ -6,15 +6,16 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:50:20 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/09 15:04:48 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:44:43 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef HUMANB_CLASS_H
+# define HUMANB_CLASS_H
 
-#include <iostream>
-#include <string>
-#include "Weapon.hpp"
+# include <iostream>
+# include <string>
+# include "Weapon.hpp"
 
 class HumanB {
 private:
@@ -28,3 +29,5 @@ public:
 	void	setWeapon(Weapon& weapon);
 	void	attack(void);
 };
+
+#endif

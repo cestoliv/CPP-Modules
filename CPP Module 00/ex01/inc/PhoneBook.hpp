@@ -6,11 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:37:43 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:29:47 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:48:45 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook-app.hpp"
+#ifndef PHONEBOOK_CLASS_H
+# define PHONEBOOK_CLASS_H
+
+# include "phonebook-app.hpp"
 
 class PhoneBook {
 private:
@@ -26,3 +29,5 @@ public:
 	void	list_contacts();
 	void	display_contact(int index);
 };
+
+#endif

@@ -6,11 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 08:34:10 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:29:07 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:48:05 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook-app.hpp"
+#ifndef CONTACT_CLASS_H
+# define CONTACT_CLASS_H
+
+# include "phonebook-app.hpp"
 
 class Contact {
 private:
@@ -33,3 +36,5 @@ public:
 	std::string	get_phone_number(void);
 	std::string	get_darkest_secret(void);
 };
+
+#endif
