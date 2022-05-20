@@ -32,6 +32,6 @@ and Orthodox Canonical class form*
 
 ## CPP Module 04
 
-**Done with bonuses**
+**Done without bonuses**
 
 *Subtype polymorphism, abstract classes, interfaces*
