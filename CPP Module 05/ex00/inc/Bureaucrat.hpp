@@ -6,12 +6,12 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:30:55 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/23 10:23:57 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/23 16:18:28 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_CLASS_H
-# define BUREAUCRAT_CLAHH_H
+# define BUREAUCRAT_CLASS_H
 
 # include <iostream>
 # include <string>
