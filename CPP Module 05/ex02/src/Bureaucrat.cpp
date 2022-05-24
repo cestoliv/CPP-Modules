@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:45:35 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 10:14:22 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:25:23 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,20 @@ void	Bureaucrat::decrementGrade(void)
 	this->_grade += 1;
 }
 
-void	Bureaucrat::signForm(Form &form) const
+void	Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
 		form.beSigned(*this);
 		std::cout << this->_name << " signed " << form.getName() << "." << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (AForm::GradeTooLowException &e)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because the lowest grade to sign is " << form.getSignGrade() << "." << std::endl;
 	}
 }
 
-void	Bureaucrat::executeForm(Form &form) const
+void	Bureaucrat::executeForm(AForm &form) const
 {
 	try
 	{

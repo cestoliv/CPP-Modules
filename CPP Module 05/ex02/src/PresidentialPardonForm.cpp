@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 11:02:57 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:14:22 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:25:46 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(void)
-	: Form("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
+	: AForm("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
 {
 
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-	: Form("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target(target)
+	: AForm("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target(target)
 {
 	
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src)
-	: Form("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
+	: AForm("Presidential Pardon", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
 {
 	*this = src;
 }

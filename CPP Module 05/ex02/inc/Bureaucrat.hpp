@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 09:30:55 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 10:09:28 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:23:19 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define HIGHTEST_GRADE 1
 # define LOWEST_GRADE 150
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 private:
@@ -39,8 +39,8 @@ public:
 
 	void			incrementGrade(void);
 	void			decrementGrade(void);
-	void			signForm(Form &form) const;
-	void			executeForm(Form &form) const;
+	void			signForm(AForm &form) const;
+	void			executeForm(AForm &form) const;
 
 	class GradeTooHighException: public std::exception {
 	public:

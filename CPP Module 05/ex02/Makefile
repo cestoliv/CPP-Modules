@@ -3,13 +3,13 @@ O		=	obj
 I		=	inc
 S		=	src
 SRC		=	$S/Bureaucrat.cpp \
-			$S/Form.cpp \
+			$S/AForm.cpp \
 			$S/PresidentialPardonForm.cpp \
 			$S/RobotomyRequestForm.cpp \
 			$S/ShrubberyCreationForm.cpp \
 			$S/main.cpp
 INCS	=	$I/Bureaucrat.hpp \
-			$I/Form.hpp \
+			$I/AForm.hpp \
 			$I/PresidentialPardonForm.hpp \
 			$I/RobotomyRequestForm.hpp \
 			$I/ShrubberyCreationForm.hpp

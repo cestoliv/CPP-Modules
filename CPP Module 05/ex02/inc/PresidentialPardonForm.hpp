@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:59:10 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:02:42 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:23:41 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # undef  SIGN_GRADE
 # define SIGN_GRADE 25
 # undef  EXEC_GRADE
 # define EXEC_GRADE 5
 
-class PresidentialPardonForm: public Form
+class PresidentialPardonForm: public AForm
 {
 private:
 	const std::string	_target;

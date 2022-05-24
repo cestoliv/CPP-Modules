@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:40:38 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 10:58:28 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:26:08 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 #include <cstdlib>
 #include <ctime>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void)
-	: Form("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
+	: AForm("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
 {
 
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-	: Form("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target(target)
+	: AForm("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target(target)
 {
 
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src)
-	: Form("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
+	: AForm("Robotomy Request", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
 {
 	*this = src;
 }

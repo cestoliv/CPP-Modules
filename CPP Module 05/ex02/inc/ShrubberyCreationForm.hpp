@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:22:58 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 10:52:41 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:24:06 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include <string>
 # include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # undef  SIGN_GRADE
 # define SIGN_GRADE 145
 # undef  EXEC_GRADE
 # define EXEC_GRADE 137
 
-class ShrubberyCreationForm: public Form
+class ShrubberyCreationForm: public AForm
 {
 private:
 	const std::string	_target;

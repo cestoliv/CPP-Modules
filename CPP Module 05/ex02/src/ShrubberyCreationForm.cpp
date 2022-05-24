@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 09:37:06 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:17:48 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:26:36 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 #include <fstream>
 #include <string>
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void)
-	: Form("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
+	: AForm("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target("Untargeted")
 {
 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: Form("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target(target)
+	: AForm("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target(target)
 {
 
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src)
-	: Form("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
+	: AForm("Shrubbery Creation", SIGN_GRADE, EXEC_GRADE), _target(src._target + "_copy")
 {
 	*this = src;
 }
