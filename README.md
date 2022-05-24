@@ -35,3 +35,9 @@ and Orthodox Canonical class form*
 **Done without bonuses**
 
 *Subtype polymorphism, abstract classes, interfaces*
+
+## CPP Module 05
+
+**Done entirely (there was no bonus)**
+
+*Repetition and Exceptions*
