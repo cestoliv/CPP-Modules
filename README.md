@@ -38,6 +38,12 @@ and Orthodox Canonical class form*
 
 ## CPP Module 05
 
-**Done entirely (there was no bonus)**
+**Done entirely (there was no bonuses)**
 
 *Repetition and Exceptions*
+
+## CPP Module 06
+
+**Done entirely (there was no bonuses)**
+
+*C++ casts*
