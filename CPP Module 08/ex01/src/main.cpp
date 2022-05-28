@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 09:36:30 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 11:17:26 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/28 11:33:47 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@
 #define MAX_VAL 750
 int main(int, char**)
 {
+	std::cout << "Test subject main, should output (2, 14): ";
+	Span sp = Span(5);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << "(" << sp.shortestSpan() << ", " << sp.longestSpan() << ")" << std::endl;
+
 	Span	empty = Span();
 
 	std::cout << "Trying to add number to a 0 sized span : ";
@@ -72,22 +81,11 @@ int main(int, char**)
 
 	int		crazy_size = 1000000;
 	Span	crazy_span = Span(crazy_size);
-	int		crazy_min = 0;
-	int		crazy_max = 0;
 	std::cout << "Fill a " << crazy_size << " sized span with random values." << std::endl;
 	srand(time(NULL));
 	for (int cur = 0; cur < crazy_size; cur++)
-	{
-		int	num = rand();
-		if (cur == 0 || num < crazy_min)
-			crazy_min = num;
-		else if (cur == 0 || num > crazy_max)
-			crazy_max = num;
-		crazy_span.addNumber(num);
-	}
-	std::cout << "  Real min: " << crazy_min << std::endl;
+		crazy_span.addNumber(rand());
 	std::cout << "    ShortestSpan(): " << crazy_span.shortestSpan() << std::endl;
-	std::cout << "  Real max: " << crazy_max << std::endl;
 	std::cout << "    LongestSpan(): " << crazy_span.longestSpan() << std::endl;
 
 	return 0;

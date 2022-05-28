@@ -6,10 +6,11 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 10:29:28 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 11:05:50 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/28 11:35:40 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <numeric>
 #include "Span.hpp"
 
 Span::Span(void)
@@ -54,14 +55,23 @@ int	Span::shortestSpan(void) const
 {
 	if (this->_elems.size() == 0)
 		throw Span::EmptySpanException();
-	return *std::min_element(this->_elems.begin(), this->_elems.end());
+
+	std::vector<int> temp = this->_elems;
+	std::sort(temp.begin(), temp.end());
+	std::adjacent_difference(temp.begin(), temp.end(), temp.begin());
+
+	return *std::min_element(temp.begin(), temp.end());
 }
 
 int	Span::longestSpan(void) const
 {
 	if (this->_elems.size() == 0)
 		throw Span::EmptySpanException();
-	return *std::max_element(this->_elems.begin(), this->_elems.end());
+
+	int	max = *std::max_element(this->_elems.begin(), this->_elems.end());
+	int	min = *std::min_element(this->_elems.begin(), this->_elems.end());
+
+	return max - min;
 }
 
 const char*	Span::MaxSizeReachedException::what(void) const throw()
