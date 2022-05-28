@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 09:31:05 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 09:42:01 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/28 10:10:06 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ public:
 	};
 };
 
-#include "../src/Array.tpp"
+# include "../src/Array.tpp"
 
 #endif
