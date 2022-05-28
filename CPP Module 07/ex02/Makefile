@@ -3,8 +3,8 @@ O		=	obj
 I		=	inc
 S		=	src
 SRC		=	$S/main.cpp
-INCS	=	$I/Array.hpp \
-			$S/Array.tpp
+INCS	=	$I/Array.hpp
+TEMPLS	=	$S/Array.tpp
 OBJ		=	$(SRC:$S/%.cpp=$O/%.o)
 CC		=	c++
 CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$I
@@ -21,7 +21,7 @@ all: $(NAME)
 $O:
 	@mkdir -p $O
 
-$O/%.o: $S/%.cpp Makefile $(INCS) | $O
+$O/%.o: $S/%.cpp Makefile $(INCS) $(TEMPLS) | $O
 	$(CC) $(CFLAGS) -c $< -o $@
 	printf "$(BLUE)-> $<$(END)\n"
 
