@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:51:43 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/09 16:26:44 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:56:49 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int	main(int argc, char* argv[])
 	std::string	filec = filecStream.str();
 
 	// REPLACE IN STRING
+	if (search.empty())
+	{
+		outfile << filec;
+		return 0;
+	}
 	for (size_t cur = 0; cur < filec.length(); cur++)
 	{
 		if (filec.substr(cur).find(search) == 0)
@@ -80,18 +85,6 @@ int	main(int argc, char* argv[])
 		else
 			outfile << filec[cur];
 	}
-	/*
-	while (filec.find(search) != std::string::npos)
-	{
-		size_t	pos = filec.find(search);
-		filec = filec.substr(0, pos)
-			+ replacement
-			+ filec.substr(pos + search.length());
-	}
-
-	// WRITE IN OUTFILE
-	outfile << filec;
-	*/
 
 	return 0;
 }
