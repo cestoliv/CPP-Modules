@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:09:39 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 10:21:36 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:15:50 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,6 @@
 
 Harl::Harl()
 {
-	this->_filter_level = 0;
-	this->_insignificant_printed = false;
-}
-
-void	Harl::setFilter_level(std::string filter_level)
-{
-	if (filter_level == "DEBUG")
-		this->_filter_level = 1;
-	else if (filter_level == "INFO")
-		this->_filter_level = 2;
-	else if (filter_level == "WARNING")
-		this->_filter_level = 3;
-	else if (filter_level == "ERROR")
-		this->_filter_level = 4;
 }
 
 void	Harl::_debug(void)
@@ -59,42 +45,35 @@ void	Harl::_error(void)
 void	Harl::complain(std::string level)
 {
 	std::string	complaintLevels[] = {
-		"debug",
-		"info",
-		"warning",
-		"error"
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
 	};
+	int			filter_level = -1;
 
-	if (this->_filter_level == 0)
+	for (int cur = 0; cur < 4; cur++)
 	{
-		if (!this->_insignificant_printed)
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		this->_insignificant_printed = true;
-	}
-	else
-	{
-		for (int cur = 0; cur < 4; cur++)
+		if (level == complaintLevels[cur])
 		{
-			if (level == complaintLevels[cur] && cur >= this->_filter_level - 1)
-			{
-				switch (cur)
-				{
-				case 0:
-					this->_debug();
-					break;
-				case 1:
-					this->_info();
-					break;
-				case 2:
-					this->_warning();
-					break;
-				case 3:
-					this->_error();
-					break;
-				}
-				break;
-			}
+			filter_level = cur;
+			break;
 		}
+	}
+
+	switch (filter_level)
+	{
+	case 0:
+		this->_debug();
+	case 1:
+		this->_info();
+	case 2:
+		this->_warning();
+	case 3:
+		this->_error();
+		break;
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 	return;
 }
