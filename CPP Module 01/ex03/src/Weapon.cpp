@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 14:38:45 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/19 09:53:07 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:48:32 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Weapon::~Weapon(void)
 	return;
 }
 
-std::string	Weapon::getType(void)
+const std::string	&Weapon::getType(void) const
 {
 	return this->_type;
 }
