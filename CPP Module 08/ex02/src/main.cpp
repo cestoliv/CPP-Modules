@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 09:36:30 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 15:39:26 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/05/30 17:43:13 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int main(int, char**)
 	mstack.push(737);
 	//[...]
 	mstack.push(0);
-	/*
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
@@ -43,5 +42,4 @@ int main(int, char**)
 	}
 	std::stack<int> s(mstack);
 	return 0;
-	*/
 }
