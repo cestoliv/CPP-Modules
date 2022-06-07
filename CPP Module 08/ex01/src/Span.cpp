@@ -6,11 +6,14 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 10:29:28 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 11:35:40 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:39:34 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <numeric>
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "Span.hpp"
 
 Span::Span(void)
@@ -73,6 +76,20 @@ int	Span::longestSpan(void) const
 
 	return max - min;
 }
+
+void	Span::insertMany(const int *array, size_t array_len)
+{
+	for (size_t cur = 0; cur < array_len; cur++)
+		this->addNumber(array[cur]);
+}
+
+void	Span::fillWithRandom(size_t num)
+{
+	srand(time(NULL));
+	for (size_t cur = 0; cur < num; cur++)
+		this->addNumber(rand());
+}
+
 
 const char*	Span::MaxSizeReachedException::what(void) const throw()
 {

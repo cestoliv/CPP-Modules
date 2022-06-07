@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 10:22:02 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 10:56:17 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:37:22 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ public:
 	void	addNumber(const int num);
 	int		shortestSpan(void) const;
 	int		longestSpan(void) const;
+	
+	void	insertMany(const int *array, size_t array_len);
+	void	fillWithRandom(size_t num);
 
 	class MaxSizeReachedException: public std::exception {
 	public:

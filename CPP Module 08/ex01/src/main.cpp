@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 09:36:30 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/28 11:33:47 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:41:06 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ int main(int, char**)
 {
 	std::cout << "Test subject main, should output (2, 14): ";
 	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
+	int	array[] = {6, 3, 17, 9, 11};
+	sp.insertMany(array, sizeof(array)/sizeof(array[0]));
+	// sp.addNumber(6);
+	// sp.addNumber(3);
+	// sp.addNumber(17);
+	// sp.addNumber(9);
+	// sp.addNumber(11);
 	std::cout << "(" << sp.shortestSpan() << ", " << sp.longestSpan() << ")" << std::endl;
 
 	Span	empty = Span();
@@ -79,12 +81,10 @@ int main(int, char**)
 		std::cout << "OK" << std::endl;
 	std::cout << std::endl;
 
-	int		crazy_size = 1000000;
-	Span	crazy_span = Span(crazy_size);
+	size_t		crazy_size = 1000000;
+	Span		crazy_span = Span(crazy_size);
 	std::cout << "Fill a " << crazy_size << " sized span with random values." << std::endl;
-	srand(time(NULL));
-	for (int cur = 0; cur < crazy_size; cur++)
-		crazy_span.addNumber(rand());
+	crazy_span.fillWithRandom(crazy_size);
 	std::cout << "    ShortestSpan(): " << crazy_span.shortestSpan() << std::endl;
 	std::cout << "    LongestSpan(): " << crazy_span.longestSpan() << std::endl;
 
