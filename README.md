@@ -18,6 +18,7 @@ stuf*
 references, switch statement*
 
 ## CPP Module 02
+[![ocartier's 42 CPP Module 02 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2611495)](https://github.com/JaeSeoKim/badge42)
 
 **Done with bonuses**
 
@@ -47,3 +48,15 @@ and Orthodox Canonical class form*
 **Done entirely (there was no bonuses)**
 
 *C++ casts*
+
+## CPP Module 07
+
+**Done entirely (there was no bonuses)**
+
+*C++ templates*
+
+## CPP Module 08
+
+**Done entirely (there was no bonuses)**
+
+*Templated containers, iterators, algorithms*
