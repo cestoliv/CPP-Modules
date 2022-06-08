@@ -26,6 +26,7 @@ references, switch statement*
 and Orthodox Canonical class form*
 
 ## CPP Module 03
+[![ocartier's 42 CPP Module 03 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2614862)](https://github.com/JaeSeoKim/badge42)
 
 **Done with bonuses**
 
