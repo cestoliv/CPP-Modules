@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:53:16 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/20 10:42:45 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:12:07 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	main(void)
 	Animal	ana = Animal();
 	ana.makeSound();
 	ana = Cat();
+	std::cout << ana.getType() << ": ";
 	ana.makeSound();
 
 	std::cout << std::endl;

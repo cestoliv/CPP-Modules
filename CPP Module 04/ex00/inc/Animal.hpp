@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 09:34:42 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/20 10:21:18 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:39:29 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ public:
 	Animal(void);
 	Animal(std::string type);
 	Animal(const Animal &src);
-	virtual ~Animal(void);
-	Animal	&operator =(const Animal &src);
+	virtual				~Animal(void);
+	Animal &operator	=(const Animal &src);
 
-	std::string		getType(void) const;
-	virtual void	makeSound(void) const;
+	std::string			getType(void) const;
+	virtual void		makeSound(void) const;
 };
 
 #endif
