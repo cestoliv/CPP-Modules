@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:13:28 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/08 18:45:49 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:11:36 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ AMateria::~AMateria()
 AMateria	&AMateria::operator =(const AMateria &src)
 {
 	if(this != &src)
-	{
 		this->_type = src._type;
-	}
 	return *this;
 }
 

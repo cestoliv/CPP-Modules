@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:32:29 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/08 18:49:10 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:12:31 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
 	me->equip(src->createMateria("cure"));
 	me->equip(src->createMateria("cure"));
 
-	tmp = src->createMateria("unnamed");
+	tmp = src->createMateria("I DOESN'T exist");
 	ICharacter*	bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
