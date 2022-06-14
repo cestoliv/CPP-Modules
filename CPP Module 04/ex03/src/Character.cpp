@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:18:58 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/08 18:46:43 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:11:51 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,7 @@ void	Character::unequip(int p_idx)
 void	Character::use(int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < this->_inventorySize && this->_inventory[idx])
-	{
-		std::cout << this->_name;
 		this->_inventory[idx]->use(target);
-	}
 	else
 		std::cout << this->_name << " doesn't do anything" << std::endl;
 }

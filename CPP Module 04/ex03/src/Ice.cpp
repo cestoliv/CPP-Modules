@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:26:33 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/08 18:44:30 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/13 20:12:01 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Ice::~Ice()
 Ice	&Ice::operator =(const Ice &src)
 {
 	(void) src;
-	return (*this);
+	return *this;
 }
 
 Ice	*Ice::clone() const
