@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:59:10 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:23:41 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:33:22 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	PresidentialPardonForm(void);
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm &src);
-	~PresidentialPardonForm(void);
+	virtual ~PresidentialPardonForm(void);
 	PresidentialPardonForm	&operator =(const PresidentialPardonForm &src);
 };
 

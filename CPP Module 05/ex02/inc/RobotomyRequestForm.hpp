@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:36:31 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:23:54 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:33:30 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 	RobotomyRequestForm(void);
 	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(const RobotomyRequestForm &src);
-	~RobotomyRequestForm(void);
+	virtual ~RobotomyRequestForm(void);
 	RobotomyRequestForm	&operator =(const RobotomyRequestForm &src);
 };
 
