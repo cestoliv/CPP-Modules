@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:40:51 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 11:22:56 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:31:38 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	AForm(void);
 	AForm(std::string name, unsigned int signGrade, unsigned int execGrade);
 	AForm(const AForm &src);
-	~AForm(void);
+	virtual ~AForm(void);
 	AForm	&operator =(const AForm &src);
 
 	std::string		getName(void) const;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:53:16 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/24 16:01:24 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:32:12 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int	main()
 	lou.signForm(*f3);
 	lou.executeForm(*f3);
 	thiery.executeForm(*f3);
+
+	delete f1;
+	delete f2;
+	delete f3;
 
 	return 0;
 }
