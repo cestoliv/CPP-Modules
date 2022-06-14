@@ -33,6 +33,7 @@ and Orthodox Canonical class form*
 *Inheritance*
 
 ## CPP Module 04
+[![ocartier's 42 CPP Module 04 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2620286)](https://github.com/JaeSeoKim/badge42)
 
 **Done with bonuses**
 
