@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:53:16 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/26 16:28:52 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:39:49 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Base	*generate(void)
 	}
 	else if (rand == 2)
 	{
-		std::cout << "Generate a  B." << std::endl;	
+		std::cout << "Generate a  B." << std::endl;
 		return new B();
 	}
 	else
@@ -88,6 +88,7 @@ int	main(void)
 		Base *randBase = generate();
 		identify(randBase);
 		identify(*randBase);
+		delete randBase;
 	}
 	return 0;
 }
