@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:13:59 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/18 11:24:14 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:35:50 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &src);
-	~ScavTrap(void);
+	virtual ~ScavTrap(void);
 	ScavTrap	&operator =(const ScavTrap &src);
 
 	bool		getGuard_mode(void) const;

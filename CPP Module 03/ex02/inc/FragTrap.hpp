@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 21:39:10 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/17 21:47:38 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:35:32 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &src);
-	~FragTrap(void);
+	virtual ~FragTrap(void);
 	FragTrap	&operator =(const FragTrap &src);
 
 	void	highFivesGuys(void);

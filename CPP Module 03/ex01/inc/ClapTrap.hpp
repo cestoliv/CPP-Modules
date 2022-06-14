@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:03:38 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/17 16:19:18 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 12:35:07 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &src);
-	~ClapTrap(void);
+	virtual ~ClapTrap(void);
 	ClapTrap		&operator =(const ClapTrap &src);
 
 	std::string		getName(void) const;
