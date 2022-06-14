@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 10:36:31 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/14 12:31:54 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:11:30 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_CLASS_H
-# define RONOTOMYREQUESTFORM_CLASS_H
+# define ROBOTOMYREQUESTFORM_CLASS_H
 
 # include <string>
 # include "Bureaucrat.hpp"
