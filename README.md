@@ -40,6 +40,7 @@ and Orthodox Canonical class form*
 *Subtype polymorphism, abstract classes, interfaces*
 
 ## CPP Module 05
+[![ocartier's 42 CPP Module 05 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2621302)](https://github.com/JaeSeoKim/badge42)
 
 **Done entirely (there was no bonuses)**
 
