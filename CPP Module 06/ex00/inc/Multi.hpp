@@ -23,8 +23,6 @@ private:
 	float	_float_val;
 	double	_double_val;
 
-	bool	_is_infinite;
-	bool	_is_nan;
 	bool	_char_impossible;
 	bool	_int_impossible;
 	bool	_float_impossible;
