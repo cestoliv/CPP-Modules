@@ -47,12 +47,14 @@ and Orthodox Canonical class form*
 *Repetition and Exceptions*
 
 ## CPP Module 06
+[![ocartier's 42 CPP Module 06 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2622272)](https://github.com/JaeSeoKim/badge42)
 
 **Done entirely (there was no bonuses)**
 
 *C++ casts*
 
 ## CPP Module 07
+[![ocartier's 42 CPP Module 07 Score](https://badge42.vercel.app/api/v2/cl3a1t3z6003009laxullvdys/project/2622915)](https://github.com/JaeSeoKim/badge42)
 
 **Done entirely (there was no bonuses)**
 
