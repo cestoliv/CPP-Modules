@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Multi.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by ocartier          #+#    #+#             */
-/*   Updated: 2022/05/26 14:53:05 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:59:42 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,15 +126,24 @@ bool	Multi::_set_inf_nan(const char *str_val)
 
 void	Multi::_convert(const char *str_val)
 {
-	std::stringstream ss(str_val);
-
-	if (!this->_check_string(str_val))
-		return;
-
 	this->_char_impossible = false;
 	this->_int_impossible = false;
 	this->_float_impossible = false;
 	this->_double_impossible = false;
+
+	// From char
+	if (strlen(str_val) == 1 && isalpha(str_val[0])) {
+		this->_char_val = str_val[0];
+		this->_int_val = str_val[0];
+		this->_float_val = str_val[0];
+		this->_double_val = str_val[0];
+		return;
+	}
+
+	std::stringstream ss(str_val);
+
+	if (!this->_check_string(str_val))
+		return;
 
 	if (this->_set_inf_nan(str_val))
 		return;
