@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by ocartier          #+#    #+#             */
-/*   Updated: 2022/06/17 14:59:42 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/06/17 15:09:14 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,12 @@ void	Multi::_convert(const char *str_val)
 		return;
 	}
 
-	std::stringstream ss(str_val);
+	// From float
+	std::string temp = str_val;
+	if (str_val[strlen(str_val) - 1] == 'f')
+		temp.resize(temp.size() - 1); // as pop_back is from C11
+
+	std::stringstream ss(temp);
 
 	if (!this->_check_string(str_val))
 		return;
