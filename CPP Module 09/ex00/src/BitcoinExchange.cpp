@@ -16,13 +16,11 @@ BitcoinExchange::BitcoinExchange(std::string db_path)
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 	: _db_path(src._db_path)
 {
-	std::cout << "i" << std::endl;
 	this->_db = src._db;
 }
 
 BitcoinExchange &BitcoinExchange::operator =(const BitcoinExchange &src)
 {
-	std::cout << "y" << std::endl;
 	this->_db_path = src._db_path;
 
 	std::map<std::string, float>::iterator it;

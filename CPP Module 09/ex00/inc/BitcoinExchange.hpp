@@ -18,7 +18,7 @@ private:
 	bool _constructDatabase();
 public:
 	BitcoinExchange(void);
-	BitcoinExchange(std::string db_path);
+	BitcoinExchange(const std::string db_path);
 	BitcoinExchange(const BitcoinExchange &src);
 	~BitcoinExchange(void);
 	BitcoinExchange	&operator =(const BitcoinExchange &src);

@@ -10,8 +10,7 @@ INCS	=	$I/BitcoinExchange.hpp \
 TEMPLS	=
 OBJ		=	$(SRC:$S/%.cpp=$O/%.o)
 CC		=	c++
-#CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$I
-CFLAGS	=	-std=c++98 -I$I
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$I
 LDFLAGS	=
 
 ERASE		=	\033[2K\r
