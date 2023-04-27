@@ -59,27 +59,24 @@ Container<T, std::allocator<T> > PmergeMe<T, Container>::sort(const Container<T,
 			pairs.push_back(std::make_pair(array[i + 1], array[i]));
 	}
 
-	// Array of first values
-	Container<T, std::allocator<T> > first_values;
-	// Allocate memory for first_values
-	reserve(first_values, array.size());
+	// Insert first values
+	Container<T, std::allocator<T> > sorted;
+	// Allocate memory
+	reserve(sorted, array.size());
 	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
-		first_values.push_back(pairs[i].first);
-
-	// Array of second values
-	Container<T, std::allocator<T> > second_values;
-	// Allocate memory for second_values
-	reserve(second_values, pairs.size());
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
-		second_values.push_back(pairs[i].second);
-
-	// Insert second value in first_values
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < second_values.size(); i++) {
-		if (second_values[i] == -1)
-			continue;
-		typename Container<T, std::allocator<T> >::iterator it = std::lower_bound(first_values.begin(), first_values.end(), second_values[i]);
-		first_values.insert(it, second_values[i]);
+	{
+		typename Container<T, std::allocator<T> >::iterator it = std::lower_bound(sorted.begin(), sorted.end(), pairs[i].first);
+		sorted.insert(it, pairs[i].first);
 	}
 
-	return first_values;
+	// Insert second values
+	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
+	{
+		if (pairs[i].second == -1)
+			continue;
+		typename Container<T, std::allocator<T> >::iterator it = std::lower_bound(sorted.begin(), sorted.end(), pairs[i].second);
+		sorted.insert(it, pairs[i].second);
+	}
+
+	return sorted;
 }

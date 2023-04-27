@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <sys/time.h>
 #include <cstring>
+#include <limits>
 #include "PmergeMe.hpp"
 
 // Test: ./PmergeMe `shuf -i 1-100000 -n 10000 | tr "\n" " "`
@@ -39,14 +40,36 @@ int main(int argc, char *argv[])
 			std::cerr << "Error: " << argv[i] << " is not a number" << std::endl;
 			return (1);
 		}
+
+		if (atof(argv[i]) > std::numeric_limits<long>::max())
+		{
+			std::cerr << "Error: " << argv[i] << " exceed numeric limit (" << std::numeric_limits<long>::max() << ")" << std::endl;
+			return (1);
+		}
+
 		vector_vals.push_back(atol(argv[i]));
 		deque_vals.push_back(atol(argv[i]));
+	}
+	// Check for duplicates
+	std::vector<long> sorted;
+	std::copy(vector_vals.begin(), vector_vals.end(), std::back_inserter(sorted));
+	std::sort(sorted.begin(), sorted.end());
+	std::vector<long>::iterator uniqit = std::unique(sorted.begin(), sorted.end());
+	if (uniqit != sorted.end())
+	{
+		std::cerr << "Error: there is some duplicates values" << std::endl;
+		return (1);
 	}
 
 	std::cout << "Before: ";
 	for (size_t i = 0; i < vector_vals.size(); i++)
 		std::cout << vector_vals[i] << " ";
 	std::cout << std::endl;
+
+	// std::cout << "Real:   ";
+	// for (size_t i = 0; i < sorted.size(); i++)
+	// 	std::cout << sorted[i] << " ";
+	// std::cout << std::endl;
 
 
 	/////
@@ -59,7 +82,7 @@ int main(int argc, char *argv[])
 	PmergeMe<long, std::vector> vector_merge;
 	std::vector<long> vector_sorted = vector_merge.sort(vector_vals);
 
-	std::cout << "After: ";
+	std::cout << "After:  ";
 	for (size_t i = 0; i < vector_sorted.size(); i++)
 		std::cout << vector_sorted[i] << " ";
 	std::cout << std::endl;
