@@ -79,7 +79,11 @@ float RPN::result(const std::string expr)
 		// std::cout << std::endl;
 	}
 
-	return elems.front();
+	// Return the sum of last elements
+	float result = 0;
+	for (std::list<float>::const_iterator it = elems.begin(); it != elems.end(); it++)
+		result += *it;
+	return result;
 }
 
 const char*	RPN::BadExpressionException::what(void) const throw()
