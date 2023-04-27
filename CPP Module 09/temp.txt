@@ -1,5 +1,0 @@
-Map = 00
-List = 01
-
-Vector = 02
-Deque = 02
