@@ -6,6 +6,7 @@
 #include <cstring>
 #include <limits>
 #include "PmergeMe.hpp"
+#include <cstdio>
 
 // Test: ./PmergeMe `shuf -i 1-100000 -n 10000 | tr "\n" " "`
 
@@ -27,23 +28,27 @@ int main(int argc, char *argv[])
 	}
 
 	// Get values from argv[1]
-	std::vector<long> vector_vals;
-	std::deque<long> deque_vals;
+	std::vector<int> vector_vals;
+	std::deque<int> deque_vals;
 	for (int i = 1; i < argc; i++)
 	{
-		bool is_number = true;
 		for (size_t j = 0; j < strlen(argv[i]); j++)
-			if (!isdigit(argv[i][j]))
-				is_number = false;
-		if (!is_number)
 		{
-			std::cerr << "Error: " << argv[i] << " is not a number" << std::endl;
-			return (1);
+			if (argv[i][j] == '-' && j == 0)
+			{
+				std::cerr << "Error: " << argv[i] << " is negative" << std::endl;
+				return (1);
+			}
+			if (!isdigit(argv[i][j]))
+			{
+				std::cerr << "Error: " << argv[i] << " is not a number" << std::endl;
+				return (1);
+			}
 		}
 
-		if (atof(argv[i]) > std::numeric_limits<long>::max())
+		if (atol(argv[i]) > std::numeric_limits<int>::max())
 		{
-			std::cerr << "Error: " << argv[i] << " exceed numeric limit (" << std::numeric_limits<long>::max() << ")" << std::endl;
+			std::cerr << "Error: " << argv[i] << " exceed numeric limit (" << std::numeric_limits<int>::max() << ")" << std::endl;
 			return (1);
 		}
 
@@ -51,10 +56,10 @@ int main(int argc, char *argv[])
 		deque_vals.push_back(atol(argv[i]));
 	}
 	// Check for duplicates
-	std::vector<long> sorted;
+	std::vector<int> sorted;
 	std::copy(vector_vals.begin(), vector_vals.end(), std::back_inserter(sorted));
 	std::sort(sorted.begin(), sorted.end());
-	std::vector<long>::iterator uniqit = std::unique(sorted.begin(), sorted.end());
+	std::vector<int>::iterator uniqit = std::unique(sorted.begin(), sorted.end());
 	if (uniqit != sorted.end())
 	{
 		std::cerr << "Error: there is some duplicates values" << std::endl;
@@ -79,8 +84,8 @@ int main(int argc, char *argv[])
 	// Start timer
 	timestamp_t start = get_timestamp();
 
-	PmergeMe<long, std::vector> vector_merge;
-	std::vector<long> vector_sorted = vector_merge.sort(vector_vals);
+	PmergeMe<int, std::vector> vector_merge;
+	std::vector<int> vector_sorted = vector_merge.sort(vector_vals);
 
 	std::cout << "After:  ";
 	for (size_t i = 0; i < vector_sorted.size(); i++)
@@ -99,8 +104,8 @@ int main(int argc, char *argv[])
 	// Start timer
 	start = get_timestamp();
 
-	PmergeMe<long, std::deque> deque_merge;
-	std::deque<long> deque_sorted = deque_merge.sort(deque_vals);
+	PmergeMe<int, std::deque> deque_merge;
+	std::deque<int> deque_sorted = deque_merge.sort(deque_vals);
 
 	// std::cout << "After: ";
 	// for (size_t i = 0; i < deque_sorted.size(); i++)
