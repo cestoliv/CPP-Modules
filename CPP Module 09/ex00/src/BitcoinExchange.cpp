@@ -4,13 +4,13 @@
 BitcoinExchange::BitcoinExchange(void)
 	: _db_path("input/data.csv")
 {
-	this->_constructDatabase();
+
 }
 
 BitcoinExchange::BitcoinExchange(std::string db_path)
 	: _db_path(db_path)
 {
-	this->_constructDatabase();
+
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -35,17 +35,19 @@ BitcoinExchange::~BitcoinExchange(void)
 
 }
 
-bool BitcoinExchange::_constructDatabase()
+std::string BitcoinExchange::dbPath(void) const
+{
+	return this->_db_path;
+}
+
+void BitcoinExchange::constructDatabase(void)
 {
 	// Open file
 	std::string line;
 	std::ifstream dbfile(this->_db_path.c_str());
 
 	if (!dbfile.is_open())
-	{
-		std::cerr << "Error: could not open file (" << this->_db_path << ")" << std::endl;
-		return (false);
-	}
+		throw BitcoinExchange::CantReadDataFile();
 
 	this->_db.clear();
 	// Read line by line
@@ -94,7 +96,7 @@ bool BitcoinExchange::_constructDatabase()
 		}
 	}
 	dbfile.close();
-	return (true);
+	return;
 }
 
 float BitcoinExchange::getRate(std::string date)
@@ -131,4 +133,9 @@ float BitcoinExchange::getRate(std::string date)
 		return this->_db[best_date];
 	}
 	return this->_db[date];
+}
+
+const char*	BitcoinExchange::CantReadDataFile::what(void) const throw()
+{
+	return ("Error: could not open file");
 }

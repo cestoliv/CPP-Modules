@@ -15,7 +15,6 @@ private:
 	std::string _db_path;
 	std::map<std::string, float> _db;
 
-	bool _constructDatabase();
 public:
 	BitcoinExchange(void);
 	BitcoinExchange(const std::string db_path);
@@ -23,7 +22,14 @@ public:
 	~BitcoinExchange(void);
 	BitcoinExchange	&operator =(const BitcoinExchange &src);
 
+	void constructDatabase(void);
+	std::string dbPath(void) const;
 	float getRate(std::string date);
+
+	class CantReadDataFile: public std::exception {
+	public:
+		virtual const char* what(void) const throw();
+	};
 };
 
 #endif

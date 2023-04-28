@@ -15,7 +15,17 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	BitcoinExchange btc = BitcoinExchange("input/data_shuffled.csv");
+	BitcoinExchange btc = BitcoinExchange("input/data.csv");
+	try
+	{
+		btc.constructDatabase();
+	}
+	catch (BitcoinExchange::CantReadDataFile &e)
+	{
+		std::cerr << e.what() << " (" << btc.dbPath() << ")" << std::endl;
+		return (1);
+	}
+
 
 	// Open file
 	std::string line;
