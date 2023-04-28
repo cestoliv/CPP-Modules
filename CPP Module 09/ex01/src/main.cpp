@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	{
 		std::cout << rpn.result(argv[1]) << std::endl;
 	}
-	catch (RPN::BadExpressionException &e)
+	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}

@@ -62,6 +62,8 @@ float RPN::result(const std::string expr)
 				elems.push_back(l2 - l1);
 				break;
 			case '/':
+				if (l1 == 0)
+					throw RPN::DivisionBy0();
 				elems.push_back(l2 / l1);
 				break;
 			case '*':
@@ -79,14 +81,23 @@ float RPN::result(const std::string expr)
 		// std::cout << std::endl;
 	}
 
-	// Return the sum of last elements
-	float result = 0;
-	for (std::list<float>::const_iterator it = elems.begin(); it != elems.end(); it++)
-		result += *it;
-	return result;
+	if (elems.size() != 1)
+		throw RPN::RemainingTerms();
+
+	return elems.front();
 }
 
 const char*	RPN::BadExpressionException::what(void) const throw()
 {
-	return ("Error");
+	return ("Error: malformed expression");
+}
+
+const char*	RPN::DivisionBy0::what(void) const throw()
+{
+	return ("Error: division by 0 is not allowed");
+}
+
+const char*	RPN::RemainingTerms::what(void) const throw()
+{
+	return ("Error: remainging terms");
 }

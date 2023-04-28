@@ -18,6 +18,16 @@ public:
 	public:
 		virtual const char* what(void) const throw();
 	};
+
+	class DivisionBy0: public std::exception {
+	public:
+		virtual const char* what(void) const throw();
+	};
+
+	class RemainingTerms: public std::exception {
+	public:
+		virtual const char* what(void) const throw();
+	};
 };
 
 #endif
