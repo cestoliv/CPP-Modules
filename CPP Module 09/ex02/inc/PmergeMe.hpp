@@ -4,6 +4,7 @@
 # include <iostream>
 # include <vector>
 # include <deque>
+# include <algorithm>
 
 template<typename T, template <typename, typename> class Container>
 class PmergeMe {
