@@ -41,17 +41,11 @@ bool reserve(std::vector<T, U> &container, typename std::vector<T, U>::size_type
 	return true;
 }
 
-// template<typename T, template <typename, typename> class Container>
-// typename Container<T, std::allocator<T> >::const_iterator next_advance(typename Container<T, std::allocator<T> >::const_iterator &it)
-// {
-// 	std::advance(it, 1);
-// 	return (it);
-// }
-
 template<typename T, template <typename, typename> class Container>
 Container<std::pair<T, T>, std::allocator<T> > merge(Container<std::pair<T, T>, std::allocator<T> > left, Container<std::pair<T, T>, std::allocator<T> > right)
 {
 	Container<std::pair<T, T>, std::allocator<T> > pairs;
+	reserve(pairs, left.size() + right.size());
 
 	while (left.size() && right.size())
 	{
@@ -100,7 +94,9 @@ template<typename T, template <typename, typename> class Container>
 Container<T, std::allocator<T> > binary_search_insertion(Container<T, std::allocator<T> > &array, size_t start, T item)
 {
 	size_t left = start;
-	size_t right = array.size() - start - 1;
+	size_t right = array.size() - 1;
+
+	std::cout << "Left: " << array[left] << " right: " << array[right] << std::endl;
 
 	while (left <= right)
 	{
@@ -120,6 +116,11 @@ Container<T, std::allocator<T> > binary_search_insertion(Container<T, std::alloc
 		array.insert(array.end(), item);
 	else
 		array.insert(array.begin() + start + left, item);
+
+	if (VERBOSE)
+	{
+		std::cout << "Inserting " << item << " at position " << start + left << " (after " << array[start + left - 1] << ")" << std::endl;
+	}
 	return (array);
 }
 
@@ -149,59 +150,65 @@ Container<T, std::allocator<T> > PmergeMe<T, Container>::sort(const Container<T,
 			pairs.push_back(std::make_pair(array[i], array[i + 1]));
 	}
 
-	std::cout << "Pairs:   ";
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
+	if (VERBOSE)
 	{
-		std::cout << "[" << pairs[i].first << ", " << pairs[i].second << "], ";
+		std::cout << "Pairs:   ";
+		for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
+			std::cout << "[" << pairs[i].first << ", " << pairs[i].second << "], ";
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 
 	// 3. Recursively sort the [n/2] larger elements from each pair, creating a sorted sequence S of [n/2] of the input elements, in ascending order.
 	Container<std::pair<T, T>, std::allocator<T> > pairs_sorted = sort_pairs(pairs);
-	std::cout << "Pairs sorted:   ";
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
+	if (VERBOSE)
 	{
-		std::cout << "[" << pairs_sorted[i].first << ", " << pairs_sorted[i].second << "], ";
+		std::cout << "Pairs sorted:   ";
+		for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
+			std::cout << "[" << pairs_sorted[i].first << ", " << pairs_sorted[i].second << "], ";
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 
 	Container<T, std::allocator<T> > sorted;
+	reserve(sorted, array.size());
+	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
+		sorted.push_back(pairs_sorted[i].first);
+
+	if (VERBOSE)
+	{
+		std::cout << "Sorted: [";
+		for (typename Container<T, std::allocator<T> >::size_type i = 0; i < sorted.size(); i++)
+			std::cout << sorted[i] << ", ";
+		std::cout << "]" << std::endl;
+	}
+
+	// bool is_before_odd = true;
 	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
 	{
-		sorted.push_back(pairs_sorted[i].first);
-	}
+		// if (sorted[i] == array.back())
+		// 	is_before_odd = false;
 
-
-	std::cout << "Sorted: [";
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < sorted.size(); i++)
-	{
-		std::cout << sorted[i] << ", ";
+		// if (is_before_odd) {
+		// 	int index = i - 1;
+		// 	if (index < 0)
+		// 		index = 0;
+		// 	binary_search_insertion(sorted, index, pairs[i].second);
+		// }
+		// else {
+		// 	binary_search_insertion(sorted, i + 1, pairs[i].second);
+		// }
+		int index = i;
+		if (index < 0)
+			index = 0;
+		std::cout << pairs_sorted[i].second << std::endl;
+		binary_search_insertion(sorted, index, pairs_sorted[i].second);
+		std::cout << "partial: [";
+		for (typename Container<T, std::allocator<T> >::size_type i = 0; i < sorted.size(); i++)
+			std::cout << sorted[i] << ", ";
+		std::cout << "]" << std::endl;
 	}
-	std::cout << "]" << std::endl;
 
 	if (is_odd)
 		binary_search_insertion(sorted, 0, array.back());
-
-	if (is_odd)
-		std::cout << "odd" << std::endl;
-
-
-	bool is_before_odd = true;
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs.size(); i++)
-	{
-		if (sorted[i] == array.back())
-			is_before_odd = false;
-
-		if (is_before_odd) {
-			int index = i - 1;
-			if (index < 0)
-				index = 0;
-			binary_search_insertion(sorted, index, pairs[i].second);
-		}
-		else {
-			binary_search_insertion(sorted, i + 1 , pairs[i].second);
-		}
-	}
 
 	return sorted;
 }
