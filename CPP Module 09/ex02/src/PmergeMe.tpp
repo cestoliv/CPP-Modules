@@ -93,12 +93,18 @@ Container<std::pair<T, T>, std::allocator<T> > sort_pairs(Container<std::pair<T,
 template<typename T, template <typename, typename> class Container>
 Container<T, std::allocator<T> > binary_search_insertion(Container<T, std::allocator<T> > &array, size_t start, T item)
 {
+	if (array.size() == 0)
+	{
+		array.push_back(item);
+		return (array);
+	}
+
 	size_t left = start;
 	size_t right = array.size() - 1;
 
-	std::cout << "Left: " << array[left] << " right: " << array[right] << std::endl;
+	bool at_start = array[left] > item;
 
-	while (left <= right)
+	while (left <= right && !at_start)
 	{
 		size_t middle = (left + right) / 2;
 		if (left == right)
@@ -112,15 +118,13 @@ Container<T, std::allocator<T> > binary_search_insertion(Container<T, std::alloc
 		else
 			right = middle - 1;
 	}
-	if (start + left > array.size() - 1)
+	if (left > array.size() - 1)
 		array.insert(array.end(), item);
 	else
-		array.insert(array.begin() + start + left, item);
+		array.insert(array.begin() + left, item);
 
 	if (VERBOSE)
-	{
-		std::cout << "Inserting " << item << " at position " << start + left << " (after " << array[start + left - 1] << ")" << std::endl;
-	}
+		std::cout << "Inserting " << item << " at position " << left << " (after " << array[left - 1] << ")" << std::endl;
 	return (array);
 }
 
@@ -129,15 +133,12 @@ Container<T, std::allocator<T> > PmergeMe<T, Container>::sort(const Container<T,
 {
 	// Source: https://en.wikipedia.org/wiki/Merge-insertion_sort
 
-	if (array.size() <= 2)
+	if (array.size() < 2)
 		return array;
 
 	// 1. Group the elements of Xinto [n/2] pairs of elements, arbitrarily, leaving one element unpaired if there is an odd number of elements.
-
 	bool is_odd = array.size() % 2 != 0;
-	// Use container_type
 	Container<std::pair<T, T>, std::allocator<T> > pairs;
-	// Allocate memory for pairs
 	reserve(pairs, array.size() / 2 + 1);
 	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < array.size(); i+=2)
 	{
@@ -168,6 +169,7 @@ Container<T, std::allocator<T> > PmergeMe<T, Container>::sort(const Container<T,
 		std::cout << std::endl;
 	}
 
+	// 4. Insert at the start of S the element that was paired with the first and smallest element of S.
 	Container<T, std::allocator<T> > sorted;
 	reserve(sorted, array.size());
 	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
@@ -181,34 +183,22 @@ Container<T, std::allocator<T> > PmergeMe<T, Container>::sort(const Container<T,
 		std::cout << "]" << std::endl;
 	}
 
-	// bool is_before_odd = true;
-	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
-	{
-		// if (sorted[i] == array.back())
-		// 	is_before_odd = false;
-
-		// if (is_before_odd) {
-		// 	int index = i - 1;
-		// 	if (index < 0)
-		// 		index = 0;
-		// 	binary_search_insertion(sorted, index, pairs[i].second);
-		// }
-		// else {
-		// 	binary_search_insertion(sorted, i + 1, pairs[i].second);
-		// }
-		int index = i;
-		if (index < 0)
-			index = 0;
-		std::cout << pairs_sorted[i].second << std::endl;
-		binary_search_insertion(sorted, index, pairs_sorted[i].second);
-		std::cout << "partial: [";
-		for (typename Container<T, std::allocator<T> >::size_type i = 0; i < sorted.size(); i++)
-			std::cout << sorted[i] << ", ";
-		std::cout << "]" << std::endl;
-	}
-
+	// 5. Insert the remaining [n / 2] − 1 elements of X ∖ S into S, one at a time, with a specially chosen insertion ordering described below. Use binary search in subsequences of S to determine the position at which each element should be inserted.
 	if (is_odd)
 		binary_search_insertion(sorted, 0, array.back());
+
+	for (typename Container<T, std::allocator<T> >::size_type i = 0; i < pairs_sorted.size(); i++)
+	{
+		binary_search_insertion(sorted, i+1, pairs_sorted[i].second);
+
+		if (VERBOSE)
+		{
+			std::cout << "partial: [";
+			for (typename Container<T, std::allocator<T> >::size_type i = 0; i < sorted.size(); i++)
+				std::cout << sorted[i] << ", ";
+			std::cout << "]" << std::endl;
+		}
+	}
 
 	return sorted;
 }

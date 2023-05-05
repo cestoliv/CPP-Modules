@@ -115,4 +115,23 @@ int main(int argc, char *argv[])
 	// Stop timer
 	end = get_timestamp();
 	std::cout << "Time to process a range of " << deque_vals.size() << " elements with std::deque  : " << end - start << " us" << std::endl;
+
+
+	/////
+	// Check sort
+	/////
+
+	for (size_t i = 0; i < sorted.size(); i++)
+	{
+		if (sorted[i] != vector_sorted[i] || sorted[i] != deque_sorted[i])
+		{
+			std::cerr << "Error: bad sort" << std::endl;
+			return (1);
+		}
+	}
+	if (sorted.size() != vector_sorted.size() || sorted.size() != deque_sorted.size())
+	{
+		std::cerr << "Error: bad sort" << std::endl;
+		return (1);
+	}
 }

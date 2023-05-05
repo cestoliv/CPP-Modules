@@ -6,7 +6,7 @@
 # include <deque>
 # include <algorithm>
 
-# define VERBOSE true
+# define VERBOSE false
 
 template<typename T, template <typename, typename> class Container>
 class PmergeMe {
